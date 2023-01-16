@@ -2,7 +2,7 @@
 
 This repository contains Assignments for Information Retrieval for SEM-2 AY-2022
 
-## Assignment-1: Boolean Retrieval System
+## 1: Boolean Retrieval System
 
 1. This assignment is aimed at designing and developing Boolean Information Retrieval System, i.e., to return those documents (specifically their names from corpus/dataset given: point 7 of General Instructions) which satisfy Boolean (AND, OR and NOT with their combinations).
 
@@ -15,7 +15,7 @@ This repository contains Assignments for Information Retrieval for SEM-2 AY-2022
 3. Try to vectorise your code as much as possible to make your computations faster and more efficient. Do not hard code any parts of the implementation unless it is indispensable. 
 
 
-## Assignment-2: Page Ranking of Web Graphs
+## 2: Page Ranking of Web Graphs
 
 #### 2A
 
@@ -38,7 +38,9 @@ This repository contains Assignments for Information Retrieval for SEM-2 AY-2022
    - Get the Hub & Authority Scores of each node in the base set for a particular query.
 
 ### Tech Stack 
+```
 1. NLTK
 2. NumPy
 3. Pandas
 4. Matplotlib
+```
