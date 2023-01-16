@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>utils.preprocess API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>utils.preprocess</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import re 
+from nltk.corpus import stopwords, words  
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+from nltk.tokenize import word_tokenize
+from nltk.metrics.distance import edit_distance
+
+# Stop words 
+STOP_WORDS = stopwords.words(&#39;english&#39;)
+CORRECT_WORDS = words.words()
+
+porter = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+# docs = {
+#   docID: {
+#        &#34;zone-1&#34;: [&#34;token-1&#34;, &#34;token-2&#34;, ...] 
+#        &#34;zone-2&#34;: [&#34;token-1&#34;, &#34;token-2&#34;, ...]
+#        &#34;zone-3&#34;: [&#34;token-1&#34;, &#34;token-2&#34;, ...]
+#   }
+# }
+
+
+def lowerCaseText(docContent: dict, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns lowercased text
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = docContent[zone].lower()
+
+    return docContent
+    
+
+def tokenize(docContent: dict) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns list of tokens 
+
+        Parameters:
+        docContent: contents of documents separated in zones
+    &#34;&#34;&#34;
+
+    docContent[&#34;title&#34;] = word_tokenize(docContent[&#34;title&#34;])
+
+    docContent[&#34;meta&#34;] = word_tokenize(docContent[&#34;meta&#34;])
+
+    docContent[&#34;characters&#34;] = word_tokenize(docContent[&#34;characters&#34;])
+
+    docContent[&#34;body&#34;] = word_tokenize(docContent[&#34;body&#34;])
+    return docContent
+
+def removeStopWords(docContent: dict, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;], stop_words=STOP_WORDS) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns the filtered tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+        stop_words: List of stopwords 
+    &#34;&#34;&#34; 
+
+    for zone in zones:
+        docContent[zone] = [token for token in docContent[zone] if token not in stop_words]
+
+    return docContent
+
+def removePunctuation(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;], punctuations=&#34;!\&#34;#$%&amp;\&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~=&#34;):
+    &#34;&#34;&#34;
+        Returns tokens after removing punctuations
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+        punctuations: List of characters which we dont want to consider 
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = re.sub(&#39;[%s]&#39; % re.escape(punctuations), &#39; &#39;, docContent[zone])
+
+    return docContent
+
+
+def stemming(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]):
+    &#34;&#34;&#34;
+        Returns the stemmed version of tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = [porter.stem(token) for token in docContent[zone]]
+    
+    return docContent
+
+def lemmatization(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]):
+    &#34;&#34;&#34;
+        Returns lemmatized version of tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+    for zone in zones:
+        docContent[zone] = [lemmatizer.lemmatize(token) for token in docContent[zone]]
+
+    return docContent
+
+def getCleanDocs(docs, remove_stopwords=True, remove_puncuation=True, normalization_type=&#34;stemming&#34;):
+    &#34;&#34;&#34;
+        Pipelined preprocessing
+
+        Parameters:
+        docs: dictionary of docs 
+        remove_stopwords: if true removes stop_words 
+        remove_puncutation: if true removes puncuation 
+        normalization_type: if &#34;stemming&#34; will stem the tokens else if &#34;lemmatization&#34; will lemmatize the tokens
+
+        Returns:
+        clean_docs: Clean preprocessed documents in dictionary format
+    &#34;&#34;&#34;
+
+    if remove_puncuation:
+        for docID, docContent in docs.items():
+            docs[docID] = removePunctuation(docContent)
+
+    for docID, docContent in docs.items():
+        docs[docID] = lowerCaseText(docContent)
+        docs[docID] = tokenize(docContent)
+
+    if remove_stopwords:
+        for docID, docContent in docs.items():
+            docs[docID] = removeStopWords(docContent)
+
+    if normalization_type == &#34;stemming&#34;:
+        for docID, docContent in docs.items():
+            docs[docID] = stemming(docContent)
+    
+    elif normalization_type == &#34;lemmatization&#34;:
+        for docID, docContent in docs.items():
+            docs[docID] = lemmatization(docContent)
+        
+    
+    for docID, docContent in docs.items():
+        if &#34;&#34; in docContent[&#34;title&#34;]:
+            docContent[&#34;title&#34;].remove(&#34;&#34;)
+        
+        if &#34;&#34; in docContent[&#34;meta&#34;]:
+            docContent[&#34;meta&#34;].remove(&#34;&#34;)
+        
+        if &#34;&#34; in docContent[&#34;characters&#34;]:
+            docContent[&#34;characters&#34;].remove(&#34;&#34;)
+
+        if &#34;&#34; in docContent[&#34;body&#34;]:
+            docContent[&#34;body&#34;].remove(&#34;&#34;)
+
+    return docs
+
+
+def correctSpelling(token):
+    &#34;&#34;&#34;
+        Spelling correction using Edit Distance method
+
+        Parameter: 
+        token: Token in query
+    &#34;&#34;&#34;
+
+    possible_words = [(edit_distance(token, w), w) for w in CORRECT_WORDS if w[0] == token[0]]
+    correct_token = sorted(possible_words, key = lambda val: val[0])[0][1] 
+    return correct_token
+
+def getCleanQueryToken(token, normalization_type=&#34;stemming&#34;, spelling_correction=True):
+    &#34;&#34;&#34;
+        Preprocesses the token present in the query 
+
+        Parameters:
+        token: token in query
+        normalization_type: if &#34;stemming&#34; will stem the token else if &#34;lemmatization&#34; will lemmatize the token
+    &#34;&#34;&#34;
+    
+    token = token.lower()
+    
+    # TODO -&gt; spelling correction
+    if spelling_correction:
+        token = correctSpelling(token) 
+
+    if normalization_type == &#34;stemming&#34;:
+        token = porter.stem(token)
+    
+    elif normalization_type == &#34;lemmatization&#34;:
+        token = lemmatizer.lemmatize(token)
+
+    return token</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="utils.preprocess.correctSpelling"><code class="name flex">
+<span>def <span class="ident">correctSpelling</span></span>(<span>token)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Spelling correction using Edit Distance method</p>
+<p>Parameter:
+token: Token in query</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def correctSpelling(token):
+    &#34;&#34;&#34;
+        Spelling correction using Edit Distance method
+
+        Parameter: 
+        token: Token in query
+    &#34;&#34;&#34;
+
+    possible_words = [(edit_distance(token, w), w) for w in CORRECT_WORDS if w[0] == token[0]]
+    correct_token = sorted(possible_words, key = lambda val: val[0])[0][1] 
+    return correct_token</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.getCleanDocs"><code class="name flex">
+<span>def <span class="ident">getCleanDocs</span></span>(<span>docs, remove_stopwords=True, remove_puncuation=True, normalization_type='stemming')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Pipelined preprocessing</p>
+<p>Parameters:
+docs: dictionary of docs
+remove_stopwords: if true removes stop_words
+remove_puncutation: if true removes puncuation
+normalization_type: if "stemming" will stem the tokens else if "lemmatization" will lemmatize the tokens</p>
+<p>Returns:
+clean_docs: Clean preprocessed documents in dictionary format</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCleanDocs(docs, remove_stopwords=True, remove_puncuation=True, normalization_type=&#34;stemming&#34;):
+    &#34;&#34;&#34;
+        Pipelined preprocessing
+
+        Parameters:
+        docs: dictionary of docs 
+        remove_stopwords: if true removes stop_words 
+        remove_puncutation: if true removes puncuation 
+        normalization_type: if &#34;stemming&#34; will stem the tokens else if &#34;lemmatization&#34; will lemmatize the tokens
+
+        Returns:
+        clean_docs: Clean preprocessed documents in dictionary format
+    &#34;&#34;&#34;
+
+    if remove_puncuation:
+        for docID, docContent in docs.items():
+            docs[docID] = removePunctuation(docContent)
+
+    for docID, docContent in docs.items():
+        docs[docID] = lowerCaseText(docContent)
+        docs[docID] = tokenize(docContent)
+
+    if remove_stopwords:
+        for docID, docContent in docs.items():
+            docs[docID] = removeStopWords(docContent)
+
+    if normalization_type == &#34;stemming&#34;:
+        for docID, docContent in docs.items():
+            docs[docID] = stemming(docContent)
+    
+    elif normalization_type == &#34;lemmatization&#34;:
+        for docID, docContent in docs.items():
+            docs[docID] = lemmatization(docContent)
+        
+    
+    for docID, docContent in docs.items():
+        if &#34;&#34; in docContent[&#34;title&#34;]:
+            docContent[&#34;title&#34;].remove(&#34;&#34;)
+        
+        if &#34;&#34; in docContent[&#34;meta&#34;]:
+            docContent[&#34;meta&#34;].remove(&#34;&#34;)
+        
+        if &#34;&#34; in docContent[&#34;characters&#34;]:
+            docContent[&#34;characters&#34;].remove(&#34;&#34;)
+
+        if &#34;&#34; in docContent[&#34;body&#34;]:
+            docContent[&#34;body&#34;].remove(&#34;&#34;)
+
+    return docs</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.getCleanQueryToken"><code class="name flex">
+<span>def <span class="ident">getCleanQueryToken</span></span>(<span>token, normalization_type='stemming', spelling_correction=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Preprocesses the token present in the query </p>
+<p>Parameters:
+token: token in query
+normalization_type: if "stemming" will stem the token else if "lemmatization" will lemmatize the token</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getCleanQueryToken(token, normalization_type=&#34;stemming&#34;, spelling_correction=True):
+    &#34;&#34;&#34;
+        Preprocesses the token present in the query 
+
+        Parameters:
+        token: token in query
+        normalization_type: if &#34;stemming&#34; will stem the token else if &#34;lemmatization&#34; will lemmatize the token
+    &#34;&#34;&#34;
+    
+    token = token.lower()
+    
+    # TODO -&gt; spelling correction
+    if spelling_correction:
+        token = correctSpelling(token) 
+
+    if normalization_type == &#34;stemming&#34;:
+        token = porter.stem(token)
+    
+    elif normalization_type == &#34;lemmatization&#34;:
+        token = lemmatizer.lemmatize(token)
+
+    return token</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.lemmatization"><code class="name flex">
+<span>def <span class="ident">lemmatization</span></span>(<span>docContent, zones=['title', 'meta', 'characters', 'body'])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns lemmatized version of tokens</p>
+<p>Parameters:
+docContent: contents of documents separated in zones
+zones: List of zones in which we use this preprocessing method</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lemmatization(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]):
+    &#34;&#34;&#34;
+        Returns lemmatized version of tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+    for zone in zones:
+        docContent[zone] = [lemmatizer.lemmatize(token) for token in docContent[zone]]
+
+    return docContent</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.lowerCaseText"><code class="name flex">
+<span>def <span class="ident">lowerCaseText</span></span>(<span>docContent: dict, zones=['title', 'meta', 'characters', 'body']) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns lowercased text</p>
+<p>Parameters:
+docContent: contents of documents separated in zones
+zones: List of zones in which we use this preprocessing method</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def lowerCaseText(docContent: dict, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns lowercased text
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = docContent[zone].lower()
+
+    return docContent</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.removePunctuation"><code class="name flex">
+<span>def <span class="ident">removePunctuation</span></span>(<span>docContent, zones=['title', 'meta', 'characters', 'body'], punctuations=&#x27;!&quot;#$%&amp;\&#x27;()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~=&#x27;)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns tokens after removing punctuations</p>
+<p>Parameters:
+docContent: contents of documents separated in zones
+zones: List of zones in which we use this preprocessing method
+punctuations: List of characters which we dont want to consider</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removePunctuation(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;], punctuations=&#34;!\&#34;#$%&amp;\&#39;()*+,-./:;&lt;=&gt;?@[\]^_`{|}~=&#34;):
+    &#34;&#34;&#34;
+        Returns tokens after removing punctuations
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+        punctuations: List of characters which we dont want to consider 
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = re.sub(&#39;[%s]&#39; % re.escape(punctuations), &#39; &#39;, docContent[zone])
+
+    return docContent</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.removeStopWords"><code class="name flex">
+<span>def <span class="ident">removeStopWords</span></span>(<span>docContent: dict, zones=['title', 'meta', 'characters', 'body'], stop_words=['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't"]) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the filtered tokens</p>
+<p>Parameters:
+docContent: contents of documents separated in zones
+zones: List of zones in which we use this preprocessing method
+stop_words: List of stopwords</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def removeStopWords(docContent: dict, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;], stop_words=STOP_WORDS) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns the filtered tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+        stop_words: List of stopwords 
+    &#34;&#34;&#34; 
+
+    for zone in zones:
+        docContent[zone] = [token for token in docContent[zone] if token not in stop_words]
+
+    return docContent</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.stemming"><code class="name flex">
+<span>def <span class="ident">stemming</span></span>(<span>docContent, zones=['title', 'meta', 'characters', 'body'])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the stemmed version of tokens</p>
+<p>Parameters:
+docContent: contents of documents separated in zones
+zones: List of zones in which we use this preprocessing method</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def stemming(docContent, zones=[&#34;title&#34;, &#34;meta&#34;, &#34;characters&#34;, &#34;body&#34;]):
+    &#34;&#34;&#34;
+        Returns the stemmed version of tokens
+
+        Parameters:
+        docContent: contents of documents separated in zones
+        zones: List of zones in which we use this preprocessing method
+    &#34;&#34;&#34;
+
+    for zone in zones:
+        docContent[zone] = [porter.stem(token) for token in docContent[zone]]
+    
+    return docContent</code></pre>
+</details>
+</dd>
+<dt id="utils.preprocess.tokenize"><code class="name flex">
+<span>def <span class="ident">tokenize</span></span>(<span>docContent: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns list of tokens </p>
+<p>Parameters:
+docContent: contents of documents separated in zones</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tokenize(docContent: dict) -&gt; dict:
+    &#34;&#34;&#34;
+        Returns list of tokens 
+
+        Parameters:
+        docContent: contents of documents separated in zones
+    &#34;&#34;&#34;
+
+    docContent[&#34;title&#34;] = word_tokenize(docContent[&#34;title&#34;])
+
+    docContent[&#34;meta&#34;] = word_tokenize(docContent[&#34;meta&#34;])
+
+    docContent[&#34;characters&#34;] = word_tokenize(docContent[&#34;characters&#34;])
+
+    docContent[&#34;body&#34;] = word_tokenize(docContent[&#34;body&#34;])
+    return docContent</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="utils" href="index.html">utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="utils.preprocess.correctSpelling" href="#utils.preprocess.correctSpelling">correctSpelling</a></code></li>
+<li><code><a title="utils.preprocess.getCleanDocs" href="#utils.preprocess.getCleanDocs">getCleanDocs</a></code></li>
+<li><code><a title="utils.preprocess.getCleanQueryToken" href="#utils.preprocess.getCleanQueryToken">getCleanQueryToken</a></code></li>
+<li><code><a title="utils.preprocess.lemmatization" href="#utils.preprocess.lemmatization">lemmatization</a></code></li>
+<li><code><a title="utils.preprocess.lowerCaseText" href="#utils.preprocess.lowerCaseText">lowerCaseText</a></code></li>
+<li><code><a title="utils.preprocess.removePunctuation" href="#utils.preprocess.removePunctuation">removePunctuation</a></code></li>
+<li><code><a title="utils.preprocess.removeStopWords" href="#utils.preprocess.removeStopWords">removeStopWords</a></code></li>
+<li><code><a title="utils.preprocess.stemming" href="#utils.preprocess.stemming">stemming</a></code></li>
+<li><code><a title="utils.preprocess.tokenize" href="#utils.preprocess.tokenize">tokenize</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
