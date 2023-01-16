@@ -43,4 +43,5 @@ This repository contains Assignments for Information Retrieval for SEM-2 AY-2022
 2. NumPy
 3. Pandas
 4. Matplotlib
+5. networkx
 ```
